@@ -1,0 +1,29 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT + 8
+  devtools:
+    restart:
+      enabled: false
+      additional-paths: src/main/java
+      exclude: WEB-INF/**
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    timeout: 1800000
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+  profiles:
+    active: dev
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  typeAliasesPackage: com.example.yin.model.domain
+
+server:
+  port: 8888
